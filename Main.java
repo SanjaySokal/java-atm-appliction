@@ -11,16 +11,18 @@ public class Main {
         try {
             choice = sc.nextInt();
         } catch (Exception e) {
-            System.out.println("Please Enter a Number");
+            System.out.println("Please Enter a Number (Machine crashed)");
         }
-        sc.close();
 
         if (choice == 0) {
-            System.out.println("Thankyou for usuing ATM Machine");
-        } else if (choice == 1) {
-            System.out.println("View Balance");
-        } else if (choice == 2) {
-            System.out.println("Cash Withdrawal");
+            System.out.println("Thankyou for usuing ATM Machine!");
+        } else {
+            AccountDetails accountDetails = new AccountDetails();
+            if (choice == 1) {
+                accountDetails.Details("balance");
+            } else if (choice == 2) {
+                accountDetails.Details("cash");
+            }
         }
     }
 }
